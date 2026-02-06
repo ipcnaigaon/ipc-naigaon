@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/ipc-naigaon-portal/static/css/main.248869b7.css",
+    "main.js": "/ipc-naigaon-portal/static/js/main.6e6222f6.js",
+    "static/js/453.22247258.chunk.js": "/ipc-naigaon-portal/static/js/453.22247258.chunk.js",
+    "static/media/church-group.jpg": "/ipc-naigaon-portal/static/media/church-group.8e64cbdb472cf750880a.jpg",
+    "static/media/ipc-logo.png": "/ipc-naigaon-portal/static/media/ipc-logo.dd207045bc7936f666a0.png",
+    "static/media/pr-family.jpg": "/ipc-naigaon-portal/static/media/pr-family.a48ad98d4883ae92216b.jpg",
+    "index.html": "/ipc-naigaon-portal/index.html",
+    "main.248869b7.css.map": "/ipc-naigaon-portal/static/css/main.248869b7.css.map",
+    "main.6e6222f6.js.map": "/ipc-naigaon-portal/static/js/main.6e6222f6.js.map",
+    "453.22247258.chunk.js.map": "/ipc-naigaon-portal/static/js/453.22247258.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.248869b7.css",
+    "static/js/main.6e6222f6.js"
+  ]
+}
