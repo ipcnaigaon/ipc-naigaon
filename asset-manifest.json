@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/ipc-naigaon/static/css/main.248869b7.css",
+    "main.css": "/ipc-naigaon/static/css/main.66091364.css",
     "main.js": "/ipc-naigaon/static/js/main.87108153.js",
     "static/js/453.0a511549.chunk.js": "/ipc-naigaon/static/js/453.0a511549.chunk.js",
     "static/media/church-group.jpg": "/ipc-naigaon/static/media/church-group.8e64cbdb472cf750880a.jpg",
     "static/media/ipc-logo.png": "/ipc-naigaon/static/media/ipc-logo.dd207045bc7936f666a0.png",
     "static/media/pr-family.jpg": "/ipc-naigaon/static/media/pr-family.a48ad98d4883ae92216b.jpg",
     "index.html": "/ipc-naigaon/index.html",
-    "main.248869b7.css.map": "/ipc-naigaon/static/css/main.248869b7.css.map",
+    "main.66091364.css.map": "/ipc-naigaon/static/css/main.66091364.css.map",
     "main.87108153.js.map": "/ipc-naigaon/static/js/main.87108153.js.map",
     "453.0a511549.chunk.js.map": "/ipc-naigaon/static/js/453.0a511549.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.248869b7.css",
+    "static/css/main.66091364.css",
     "static/js/main.87108153.js"
   ]
 }
