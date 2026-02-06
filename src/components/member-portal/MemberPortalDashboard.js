@@ -262,15 +262,15 @@ const MemberPortalDashboard = () => {
           <div className="profile-info">
             <div className="profile-item">
               <span className="label">Senior Pastor:</span>
-              <span className="value">Pr. Jobin Alisha</span>
+              <span className="value">Pr. Johnson George</span>
             </div>
             <div className="profile-item">
               <span className="label">Location:</span>
-              <span className="value">Kazhakkuttom, Trivandrum</span>
+              <span className="value">Naigaon, Mumbai</span>
             </div>
             <div className="profile-item">
               <span className="label">Contact:</span>
-              <span className="value">info@christag.com</span>
+              <span className="value">info@ipcnaigaon.com</span>
             </div>
           </div>
         </div>

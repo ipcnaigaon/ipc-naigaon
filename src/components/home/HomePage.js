@@ -360,8 +360,8 @@ const HomePage = () => {
                 <h4>Br. Reji Abraham</h4>
                 <p className="leadership-role">Secretary</p>
                 <div className="leadership-contact">
-                  <a href="tel:+919107208316998" className="leadership-phone">📞 +91 07208316998</a>
-                  <a href="https://wa.me/919107208316998" target="_blank" rel="noopener noreferrer" className="leadership-whatsapp">
+                  <a href="tel:+919107208316998" className="leadership-phone">📞 +91 7208316998</a>
+                  <a href="https://wa.me/917208316998" target="_blank" rel="noopener noreferrer" className="leadership-whatsapp">
                     💬 WhatsApp
                   </a>
                 </div>

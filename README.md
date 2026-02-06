@@ -3,7 +3,7 @@
 A professional React-based admin dashboard for managing church operations including members, events, donations, and more.
 
 **Church:** Indian Pentecostal Church of God - Bethel Church, Naigaon East  
-**Pastor:** Pr. Jobin Alisha
+**Pastor:** Pr. Johnson George
 
 ## Features
 

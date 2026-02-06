@@ -509,4 +509,4 @@ You now have:
 ---
 
 Made with ❤️ for Indian Pentecostal Church of God - Bethel Church, Naigaon East  
-Pastor: Pr. Jobin Alisha
+Pastor: Pr. Johnson George

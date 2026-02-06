@@ -1,8 +1,8 @@
 {
-  "name": "ipc-naigaon-portal",
+  "name": "ipc-naigaon",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ipc-naigaon.github.io/ipc-naigaon-portal",
+  "homepage": "https://ipc-naigaon.github.io/ipc-naigaon",
   "dependencies": {
     "@reduxjs/toolkit": "^2.11.2",
     "@testing-library/dom": "^10.4.1",

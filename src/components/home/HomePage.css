@@ -149,6 +149,7 @@
   width: auto;
   filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
   animation: fadeInUp 0.8s ease-out;
+      filter: brightness(0) invert(1);
 }
 
 .church-logo-main {

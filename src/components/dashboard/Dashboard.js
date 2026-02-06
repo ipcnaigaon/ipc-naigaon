@@ -77,7 +77,7 @@ const Dashboard = () => {
         <div className="dashboard-header-content">
           <div>
             <h1>Dashboard Overview</h1>
-            <p>Welcome back! Here's what's happening today. | Pastor: Pr. Jobin Alisha</p>
+            <p>Welcome back! Here's what's happening today. | Pastor: Pr. Johnson George</p>
           </div>
           <button 
             className="celebrations-btn"

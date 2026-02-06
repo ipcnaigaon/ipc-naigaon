@@ -107,7 +107,7 @@ const MemberDonation = () => {
       return;
     }
 
-    const upiId = 'jobinelisha@okaxis';
+    const upiId = 'johnsonappusa@oksbi';
     const name = 'Indian Pentecostal Church of God';
     const amount = parseFloat(finalAmount).toFixed(2);
     const note = `${category} donation - ${member?.name || 'Anonymous'}`;
@@ -346,7 +346,7 @@ const MemberDonation = () => {
                 </div>
                 <div className="detail-row">
                   <span className="detail-label">Branch:</span>
-                  <span className="detail-value">Kazhakkuttom, Trivandrum</span>
+                  <span className="detail-value">Naigaon, Mumbai</span>
                 </div>
               </div>
               <p className="info-note">💡 Please use your name as reference when transferring.</p>
@@ -397,8 +397,8 @@ const MemberDonation = () => {
             <div className="payment-info-box">
               <h4>📱 Church UPI ID:</h4>
               <div className="wallet-address">
-                <code>jobinelisha@okaxis</code>
-                <button type="button" className="copy-btn" onClick={() => navigator.clipboard.writeText('jobinelisha@okaxis')}>
+                <code>johnsonappusa@oksbi</code>
+                <button type="button" className="copy-btn" onClick={() => navigator.clipboard.writeText('johnsonappus@oksbi')}>
                   📋 Copy
                 </button>
               </div>
@@ -493,8 +493,8 @@ const MemberDonation = () => {
               <h4>💵 Mail Your Check To:</h4>
               <address>
                 Indian Pentecostal Church of God<br />
-                Kazhakkuttom<br />
-                Trivandrum, Kerala
+                Naigaon<br />
+                Mumbai, Maharashtra
               </address>
               <p className="info-note">Make checks payable to "Indian Pentecostal Church of God"</p>
               <p>Or visit our office during business hours to donate in person.</p>

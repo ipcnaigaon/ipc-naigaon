@@ -201,7 +201,7 @@ const ShareableWeeklyEvents = ({ events, weekRange, onClose }) => {
 
               <div className="contact-card-shareable">
                 <div className="contact-badge">FOR MORE DETAILS</div>
-                <p>PR JOBIN ELISHA : 9847998584</p>
+                <p>PR Johnson George : 9284333603</p>
               </div>
             </div>
           </div>
