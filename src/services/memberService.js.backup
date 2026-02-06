@@ -1,0 +1,276 @@
+/**
+ * Member Service
+ * Handles API calls for member management
+ */
+
+/**
+ * Generate a secure random password
+ */
+const generatePassword = () => {
+  const length = 12;
+  const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*';
+  let password = '';
+  for (let i = 0; i < length; i++) {
+    password += charset.charAt(Math.floor(Math.random() * charset.length));
+  }
+  return password;
+};
+
+/**
+ * Generate credentials for a member
+ */
+const generateCredentials = (member) => {
+  const username = member.email.split('@')[0] + member.id;
+  const password = generatePassword();
+  return {
+    username,
+    password,
+    temporaryPassword: true,
+    lastPasswordChange: null,
+  };
+};
+
+// Mock data for demonstration with credentials
+let mockMembers = [
+  {
+    id: 1,
+    name: 'John Doe',
+    email: 'john@example.com',
+    phone: '555-0101',
+    gender: 'male',
+    dateOfBirth: '1990-05-15',
+    address: '123 Main St, City',
+    joinDate: '2020-01-10',
+    status: 'active',
+    membershipType: 'regular',
+    hasPortalAccess: true,
+    credentials: {
+      username: 'john1',
+      password: 'Welcome@2020',
+      temporaryPassword: true,
+      lastPasswordChange: null,
+    },
+  },
+  {
+    id: 2,
+    name: 'Jane Smith',
+    email: 'jane@example.com',
+    phone: '555-0102',
+    gender: 'female',
+    dateOfBirth: '1985-08-22',
+    address: '456 Oak Ave, City',
+/**
+ * Create new member
+ */
+export const createMember = async (memberData) => {
+  await new Promise(resolve => setTimeout(resolve, 500));
+  const newMember = {
+    ...memberData,
+    id: Date.now(),
+    hasPortalAccess: memberData.hasPortalAccess || false,
+    credentials: null,
+  };
+  
+  // Generate credentials if portal access is enabled
+  if (newMember.hasPortalAccess) {
+    newMember.credentials = generateCredentials(newMember);
+    
+    // Simulate sending email notification
+    console.log('📧 Email Notification Sent:');
+    console.log(`To: ${newMember.email}`);
+    console.log(`Subject: Your Church Portal Access Credentials`);
+    console.log(`Username: ${newMember.credentials.username}`);
+    console.log(`Temporary Password: ${newMember.credentials.password}`);
+    console.log(`Login URL: http://localhost:3000/member-portal/login`);
+  }
+  
+  mockMembers.unshift(newMember);
+  return newMember;
+};{
+    id: 3,
+    name: 'Michael Johnson',
+    email: 'michael@example.com',
+    phone: '555-0103',
+    gender: 'male',
+    dateOfBirth: '1978-03-10',
+    address: '789 Pine Rd, City',
+    joinDate: '2018-03-20',
+    status: 'active',
+    membershipType: 'leadership',
+    hasPortalAccess: true,
+    credentials: {
+      username: 'michael3',
+      password: 'Welcome@2018',
+      temporaryPassword: true,
+      lastPasswordChange: null,
+    },
+  },
+  {
+    id: 4,
+    name: 'Sarah Williams',
+    email: 'sarah@example.com',
+    phone: '555-0104',
+    gender: 'female',
+    dateOfBirth: '1992-11-08',
+    address: '321 Elm St, City',
+    joinDate: '2021-03-15',
+    status: 'active',
+    membershipType: 'volunteer',
+    hasPortalAccess: true,
+    credentials: {
+      username: 'sarah4',
+      password: 'Welcome@2021',
+      temporaryPassword: true,
+      lastPasswordChange: null,
+    },
+  },
+  {
+    id: 5,
+    name: 'David Brown',
+    email: 'david@example.com',
+    phone: '555-0105',
+    gender: 'male',
+    dateOfBirth: '1988-07-25',
+    address: '654 Maple Ave, City',
+    joinDate: '2019-09-10',
+    status: 'active',
+    membershipType: 'regular',
+    hasPortalAccess: false,
+    credentials: null,
+  },
+];
+
+/**
+ * Get all members
+ */
+export const getAllMembers = async () => {
+  await new Promise(resolve => setTimeout(resolve, 500));
+  return mockMembers;
+};
+
+/**
+ * Get member by ID
+ */
+export const getMemberById = async (id) => {
+  await new Promise(resolve => setTimeout(resolve, 300));
+  return mockMembers.find(m => m.id === parseInt(id));
+};
+
+/**
+ * Create new member
+ */
+export const createMember = async (memberData) => {
+  await new Promise(resolve => setTimeout(resolve, 500));
+  const newMember = {
+    ...memberData,
+    id: Date.now(),
+  };
+  mockMembers.unshift(newMember);
+  return newMember;
+};
+
+/**
+ * Update member
+ */
+export const updateMember = async (id, memberData) => {
+  await new Promise(resolve => setTimeout(resolve, 500));
+  const index = mockMembers.findIndex(m => m.id === parseInt(id));
+/**
+ * Generate credentials for existing member
+ */
+export const generateMemberCredentials = async (id) => {
+  await new Promise(resolve => setTimeout(resolve, 500));
+  const member = mockMembers.find(m => m.id === parseInt(id));
+  
+  if (!member) {
+    throw new Error('Member not found');
+  }
+  
+  const credentials = generateCredentials(member);
+  member.credentials = credentials;
+  member.hasPortalAccess = true;
+  
+  // Simulate sending email notification
+  console.log('📧 Email Notification Sent:');
+  console.log(`To: ${member.email}`);
+  console.log(`Subject: Your Church Portal Access Credentials`);
+  console.log(`Username: ${credentials.username}`);
+  console.log(`Temporary Password: ${credentials.password}`);
+  console.log(`Login URL: http://localhost:3000/member-portal/login`);
+  
+  return { member, credentials };
+};
+
+/**
+ * Reset member credentials
+ */
+export const resetMemberCredentials = async (id) => {
+  await new Promise(resolve => setTimeout(resolve, 500));
+  const member = mockMembers.find(m => m.id === parseInt(id));
+  
+  if (!member) {
+    throw new Error('Member not found');
+  }
+  
+  if (!member.credentials) {
+    throw new Error('Member does not have portal access');
+  }
+  
+  const newPassword = generatePassword();
+  member.credentials.password = newPassword;
+  member.credentials.temporaryPassword = true;
+  member.credentials.lastPasswordChange = new Date().toISOString();
+  
+  // Simulate sending email notification
+  console.log('📧 Password Reset Email Sent:');
+  console.log(`To: ${member.email}`);
+  console.log(`Subject: Your Password Has Been Reset`);
+  console.log(`Username: ${member.credentials.username}`);
+  console.log(`New Temporary Password: ${newPassword}`);
+  
+  return { member, newPassword };
+};
+
+/**
+ * Revoke member portal access
+ */
+export const revokeMemberAccess = async (id) => {
+  await new Promise(resolve => setTimeout(resolve, 500));
+  const member = mockMembers.find(m => m.id === parseInt(id));
+  
+  if (!member) {
+    throw new Error('Member not found');
+  }
+  
+  member.credentials = null;
+  member.hasPortalAccess = false;
+  
+  return member;
+};
+
+export default {
+  getAllMembers,
+  getMemberById,
+  createMember,
+  updateMember,
+  deleteMember,
+  generateMemberCredentials,
+  resetMemberCredentials,
+  revokeMemberAccess,
+};
+/**
+ * Delete member
+ */
+export const deleteMember = async (id) => {
+  await new Promise(resolve => setTimeout(resolve, 500));
+  mockMembers = mockMembers.filter(m => m.id !== parseInt(id));
+  return { success: true };
+};
+
+export default {
+  getAllMembers,
+  getMemberById,
+  createMember,
+  updateMember,
+  deleteMember,
+};

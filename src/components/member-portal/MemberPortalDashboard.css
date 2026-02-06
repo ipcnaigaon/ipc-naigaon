@@ -1,0 +1,522 @@
+/* Member Portal Dashboard Styles */
+
+.member-portal-dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.member-portal-header-section {
+  margin-bottom: 32px;
+}
+
+.member-portal-header-section h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0 0 8px 0;
+}
+
+.member-portal-header-section p {
+  color: #718096;
+  font-size: 16px;
+  margin: 0;
+}
+
+.member-portal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 24px;
+}
+
+.member-portal-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.member-portal-card.full-width {
+  grid-column: 1 / -1;
+}
+
+.member-portal-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0 0 20px 0;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.profile-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.profile-item:last-child {
+  border-bottom: none;
+}
+
+.profile-item .label {
+  font-weight: 600;
+  color: #4a5568;
+  font-size: 14px;
+}
+
+.profile-item .value {
+  color: #2d3748;
+  font-size: 16px;
+}
+
+.profile-item .badge {
+  padding: 4px 12px;
+  background: #bee3f8;
+  color: #2c5282;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.profile-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.btn-edit-profile {
+  padding: 8px 12px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-edit-profile:hover {
+  background: #5563d6;
+}
+
+/* Weekly Events Card Styles */
+.weekly-events-card .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.weekly-events-card .card-header h3 {
+  margin: 0;
+}
+
+.week-label {
+  padding: 6px 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.no-data-state {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.empty-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.no-data-state p {
+  color: #a0aec0;
+  font-size: 14px;
+  margin: 0;
+}
+
+.weekly-events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.weekly-events-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.weekly-events-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.weekly-events-list::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 10px;
+}
+
+.weekly-events-list::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+
+.weekly-event-item {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+  border-radius: 12px;
+  border-left: 4px solid #667eea;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.weekly-event-item.compact {
+  padding: 12px;
+  gap: 12px;
+}
+
+.weekly-event-item:hover {
+  transform: translateX(8px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+  border-left-color: #764ba2;
+}
+
+.event-date-badge {
+  min-width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.weekly-event-item.compact .event-date-badge {
+  min-width: 55px;
+  height: 55px;
+  border-radius: 10px;
+}
+
+.event-date-badge .day {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.weekly-event-item.compact .event-date-badge .day {
+  font-size: 22px;
+}
+
+.event-date-badge .month {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+}
+
+.weekly-event-item.compact .event-date-badge .month {
+  font-size: 10px;
+}
+
+.event-date-badge .weekday {
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin-top: 2px;
+}
+
+.event-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.event-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.weekly-event-item.compact .event-title {
+  font-size: 15px;
+}
+
+.event-description {
+  font-size: 13px;
+  color: #718096;
+  margin: 0;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.event-meta-info {
+  display: flex;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.weekly-event-item.compact .event-meta-info {
+  gap: 12px;
+  margin-top: 2px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.weekly-event-item.compact .meta-item {
+  font-size: 12px;
+  gap: 4px;
+}
+
+.meta-item .icon {
+  font-size: 14px;
+}
+
+.weekly-event-item.compact .meta-item .icon {
+  font-size: 13px;
+}
+
+.available-events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.available-event-card {
+  background: #f7fafc;
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.available-event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.available-event-card h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0 0 8px 0;
+}
+
+.available-event-card .description {
+  font-size: 14px;
+  color: #718096;
+  margin: 0 0 16px 0;
+  line-height: 1.5;
+}
+
+.event-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: #4a5568;
+}
+
+.btn-register {
+  width: 100%;
+  padding: 10px;
+  background: #48bb78;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-register:hover {
+  background: #38a169;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 20px;
+  background: #f7fafc;
+  border-radius: 8px;
+}
+
+.stat-value {
+  display: block;
+  font-size: 32px;
+  font-weight: 700;
+  color: #48bb78;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.no-data {
+  text-align: center;
+  color: #a0aec0;
+  padding: 40px 0;
+}
+
+@media (max-width: 768px) {
+  .member-portal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .available-events-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .member-portal-dashboard {
+    padding: 16px;
+  }
+
+  .member-portal-header-section h1 {
+    font-size: 22px;
+  }
+
+  .member-portal-header-section p {
+    font-size: 14px;
+  }
+
+  .member-portal-card {
+    padding: 16px;
+  }
+
+  .profile-item {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .label {
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 480px) {
+  .member-portal-dashboard {
+    padding: 12px;
+  }
+
+  .member-portal-grid {
+    gap: 16px;
+  }
+
+  .member-portal-header-section {
+    margin-bottom: 16px;
+  }
+
+  .member-portal-header-section h1 {
+    font-size: 18px;
+  }
+
+  .member-portal-header-section p {
+    font-size: 12px;
+  }
+
+  .member-portal-card {
+    padding: 12px;
+  }
+
+  .member-portal-card h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .stat-item {
+    padding: 12px;
+  }
+
+  .stat-value {
+    font-size: 24px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+  }
+
+  .available-event-card {
+    padding: 12px;
+  }
+
+  .available-event-card h4 {
+    font-size: 14px;
+  }
+
+  .available-event-card .description {
+    font-size: 12px;
+  }
+
+  .event-meta {
+    font-size: 12px;
+    gap: 8px;
+  }
+
+  .btn-register {
+    padding: 8px 12px;
+    font-size: 12px;
+    margin-top: 8px;
+  }
+
+  .weekly-event-item {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .event-date-badge {
+    min-width: 40px;
+  }
+
+  .event-title {
+    font-size: 13px;
+  }
+
+  .event-meta-info {
+    font-size: 11px;
+    gap: 4px;
+  }
+}

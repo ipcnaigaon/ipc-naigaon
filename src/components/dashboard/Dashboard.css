@@ -1,0 +1,446 @@
+/* Dashboard Styles */
+
+.dashboard {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  margin-bottom: 32px;
+}
+
+.dashboard-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.dashboard-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0 0 8px 0;
+}
+
+.dashboard-header p {
+  font-size: 16px;
+  color: #718096;
+  margin: 0;
+}
+
+/* Celebrations Button */
+.celebrations-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+.celebrations-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(102, 126, 234, 0.5);
+  animation: none;
+}
+
+.celebrations-btn:active {
+  transform: translateY(0);
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 25px rgba(102, 126, 234, 0.5);
+  }
+}
+
+/* Weekly Celebrations Section */
+.celebrations-section {
+  margin-bottom: 32px;
+  animation: sectionSlideIn 0.6s ease-out;
+}
+
+@keyframes sectionSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.celebrations-section h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0 0 20px 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.celebrations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.celebration-card {
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+  animation: cardPopIn 0.5s ease-out backwards;
+}
+
+.celebrations-grid .celebration-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.celebrations-grid .celebration-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.celebrations-grid .celebration-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.celebrations-grid .celebration-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.celebrations-grid .celebration-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.celebrations-grid .celebration-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+@keyframes cardPopIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Birthday Card Styles */
+.celebration-card {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  box-shadow: 0 8px 24px rgba(72, 187, 120, 0.25);
+}
+
+.celebration-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Anniversary Card Styles */
+.celebration-card.anniversary {
+  background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
+  box-shadow: 0 8px 24px rgba(237, 137, 54, 0.25);
+}
+
+/* Church Joining Anniversary Card Styles */
+.celebration-card.churchJoinAnniversary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.25);
+}
+
+.celebration-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+.celebration-card.anniversary:hover {
+  box-shadow: 0 12px 32px rgba(237, 137, 54, 0.35);
+}
+
+.celebration-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 2;
+  animation: bounce 2s infinite;
+}
+
+.celebration-card:hover .celebration-icon {
+  animation: bounce 0.6s ease-out, scale 0.3s ease-out;
+}
+
+.celebration-display {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.celebration-icon {
+  font-size: 48px;
+  position: absolute;
+  z-index: 2;
+  backface-visibility: hidden;
+}
+
+/* Animation only for anniversary cards */
+.celebration-card.anniversary .celebration-icon,
+.celebration-card.churchJoinAnniversary .celebration-icon {
+  animation: iconFlip 5s ease-in-out infinite;
+}
+
+.anniversary-badge {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: badgeFlip 5s ease-in-out infinite;
+  backface-visibility: hidden;
+}
+
+.years-number {
+  font-size: 42px;
+  font-weight: 800;
+  color: white;
+  line-height: 1;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.years-text {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@keyframes iconFlip {
+  0% {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+  40% {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+  50% {
+    opacity: 0;
+    transform: rotateY(90deg);
+  }
+  60% {
+    opacity: 0;
+    transform: rotateY(90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+}
+
+@keyframes badgeFlip {
+  0% {
+    opacity: 0;
+    transform: rotateY(-90deg);
+  }
+  40% {
+    opacity: 0;
+    transform: rotateY(-90deg);
+  }
+  50% {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+  60% {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: rotateY(-90deg);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.celebration-card h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 6px 0;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.celebration-type {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin: 0 0 8px 0;
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+}
+
+.celebration-date {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 1);
+  font-weight: 700;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.chart-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chart-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0 0 20px 0;
+}
+
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
+}
+
+.activity-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.activity-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0 0 20px 0;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.loading-spinner {
+  font-size: 20px;
+  color: #667eea;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .charts-grid,
+  .activity-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-header h1 {
+    font-size: 24px;
+  }
+}

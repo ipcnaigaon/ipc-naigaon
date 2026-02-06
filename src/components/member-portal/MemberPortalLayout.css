@@ -1,0 +1,514 @@
+/* Member Portal Layout Styles - Hybrid Desktop/Mobile */
+
+.member-portal-layout {
+  min-height: 100vh;
+  background: #f7fafc;
+}
+
+/* Desktop Header - Default Visible */
+.member-portal-nav {
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.member-portal-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.member-portal-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-image {
+  height: 45px;
+  width: auto;
+}
+
+.member-portal-nav-left h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.member-nav-links {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-link {
+  padding: 8px 16px;
+  background: none;
+  border: none;
+  border-radius: 6px;
+  color: #4a5568;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-link:hover {
+  background: #edf2f7;
+  color: #667eea;
+}
+
+.member-portal-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.notification-container {
+  position: relative;
+}
+
+.notification-bell {
+  position: relative;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.notification-bell:hover {
+  background: #f7fafc;
+  transform: scale(1.1);
+}
+
+.notification-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: #f56565;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 5px;
+  border-radius: 10px;
+  min-width: 18px;
+  text-align: center;
+}
+
+.member-name {
+  font-size: 14px;
+  color: #4a5568;
+  font-weight: 500;
+  display: inline-block;
+  max-width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn-logout {
+  padding: 8px 20px;
+  background: #f56565;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-logout:hover {
+  background: #e53e3e;
+}
+
+/* Mobile Menu Toggle - Hidden by default */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+/* Mobile Sidebar - Hidden by default */
+.member-sidebar {
+  display: none;
+}
+
+.sidebar-overlay {
+  display: none;
+}
+
+.member-portal-content {
+  padding: 20px;
+}
+
+/* Tablet - Still use desktop header */
+@media (max-width: 1024px) {
+  .member-portal-nav {
+    padding: 12px 20px;
+  }
+
+  .member-portal-nav-left {
+    gap: 24px;
+  }
+
+  .member-portal-nav-left h2 {
+    font-size: 16px;
+  }
+
+  .nav-link {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .member-name {
+    font-size: 12px;
+  }
+
+  .btn-logout {
+    padding: 6px 16px;
+    font-size: 12px;
+  }
+}
+
+/* Mobile - Switch to sidebar menu */
+@media (max-width: 768px) {
+  /* Hide desktop header elements */
+  .member-portal-nav-left {
+    display: none;
+  }
+
+  .member-portal-nav-right {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 0 8px;
+  }
+
+  /* Ensure notification sits on the far right on mobile */
+  .notification-container {
+    order: 2;
+    margin-left: auto;
+  }
+
+  /* Ensure notification is visually above centered welcome label */
+  .notification-container {
+    z-index: 300;
+  }
+
+  .member-name {
+    z-index: 100;
+  }
+
+  .member-portal-nav {
+    position: relative;
+  }
+
+  .member-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 80%;
+    pointer-events: none;
+    justify-content: center;
+  }
+
+  .member-center .member-name {
+    display: inline-block;
+    max-width: calc(100% - 36px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 13px;
+    color: #4a5568;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .member-center .notification-container {
+    position: static;
+    margin-left: 0;
+    order: 0;
+    pointer-events: auto;
+  }
+
+  .btn-logout {
+    display: none;
+  }
+
+  .member-portal-nav {
+    padding: 12px 16px;
+    gap: 12px;
+    min-height: auto;
+  }
+
+  /* Show mobile toggle */
+  .mobile-menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    order: -1;
+    margin-right: 8px;
+  }
+
+  /* Show sidebar */
+  .member-sidebar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.15);
+    z-index: 200;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .member-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-header {
+    padding: 24px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    text-decoration: none;
+  }
+
+  .sidebar-logo-image {
+    height: 40px;
+    width: auto;
+    filter: brightness(0) invert(1);
+  }
+
+  .sidebar-logo h2 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+    color: white;
+  }
+
+  .sidebar-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sidebar-nav {
+    flex: 1;
+    padding: 16px 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar-nav .nav-link {
+    padding: 16px 20px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .sidebar-nav .nav-link:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+  }
+
+  .nav-icon {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+  }
+
+  .nav-text {
+    flex: 1;
+  }
+
+  .sidebar-footer {
+    padding: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .sidebar-footer .btn-logout {
+    display: block;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 12px 16px;
+  }
+
+  .sidebar-footer .btn-logout:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .member-portal-nav {
+    position: sticky;
+  }
+
+  
+
+  .member-portal-content {
+    padding: 16px;
+  }
+
+  .notification-bell {
+    font-size: 20px;
+  }
+}
+
+  /* Desktop permanent-sidebar behavior reverted: keep header layout consistent across larger widths.
+     Sidebar remains mobile-only (slide-in) unless explicitly toggled. */
+
+/* Mobile adjustments: show compact welcome and mobile logout */
+/* mobile-logout and member-name mobile styles reverted to previous state */
+
+/* Small Mobile - Further optimizations */
+@media (max-width: 480px) {
+  .member-portal-nav {
+    padding: 10px 12px;
+    height: auto;
+    min-height: 56px;
+  }
+
+  .mobile-menu-toggle {
+    font-size: 18px;
+    padding: 6px;
+    min-width: 40px;
+  }
+
+  .member-portal-nav-right {
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .notification-container {
+    flex-shrink: 0;
+    position: relative;
+    order: 2;
+    margin-left: auto;
+    z-index: 400;
+    display: flex;
+    align-items: center;
+  }
+
+  .notification-bell {
+    font-size: 18px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    color: #2c3e50;
+  }
+
+  .notification-badge {
+    top: 2px;
+    right: 2px;
+    font-size: 9px;
+    padding: 1px 3px;
+  }
+
+  .member-portal-content {
+    padding: 12px;
+  }
+
+  .sidebar-header {
+    padding: 16px 12px;
+  }
+
+  .sidebar-close {
+    font-size: 20px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .sidebar-logo h2 {
+    font-size: 13px;
+  }
+
+  .sidebar-logo-image {
+    height: 32px;
+  }
+
+  .sidebar-nav .nav-link {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  .nav-icon {
+    font-size: 16px;
+    min-width: 20px;
+  }
+
+  .sidebar-footer {
+    padding: 12px;
+  }
+
+  .sidebar-footer .btn-logout {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+}

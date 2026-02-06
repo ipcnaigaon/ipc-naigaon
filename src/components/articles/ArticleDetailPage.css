@@ -1,0 +1,235 @@
+/* Article Detail Page - Paper Style */
+
+.article-detail-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 40px 20px;
+  font-family: 'Georgia', 'Garamond', serif;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: white;
+  color: #2c3e50;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.back-button:hover {
+  transform: translateX(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.article-detail-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-size: 18px;
+  color: #2c3e50;
+}
+
+.article-paper {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 60px;
+  border-radius: 4px;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.15),
+              0 20px 100px rgba(0, 0, 0, 0.1);
+  position: relative;
+  line-height: 1.8;
+  color: #2d3748;
+}
+
+/* Paper texture effect */
+.article-paper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.01) 2px,
+      rgba(0, 0, 0, 0.01) 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.01) 2px,
+      rgba(0, 0, 0, 0.01) 4px
+    );
+  pointer-events: none;
+  border-radius: 4px;
+}
+
+.article-paper-header {
+  margin-bottom: 40px;
+}
+
+.article-paper-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  margin-bottom: 30px;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.article-paper-title-section {
+  text-align: center;
+}
+
+.article-paper-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.article-paper-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 2px solid #edf2f7;
+}
+
+.meta-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.category-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 12px;
+}
+
+.author {
+  color: #4a5568;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.separator {
+  color: #cbd5e0;
+  font-weight: 300;
+}
+
+.date {
+  color: #718096;
+  font-size: 13px;
+}
+
+.article-paper-content {
+  position: relative;
+  z-index: 1;
+  margin: 40px 0;
+}
+
+.article-paragraph {
+  font-size: 16px;
+  line-height: 1.9;
+  margin: 0 0 20px 0;
+  text-align: justify;
+  color: #2d3748;
+  text-indent: 2em;
+}
+
+.article-paragraph:first-of-type {
+  text-indent: 0;
+}
+
+.article-paragraph:first-letter {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #667eea;
+}
+
+.article-paper-footer {
+  margin-top: 50px;
+  padding-top: 30px;
+}
+
+.footer-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #667eea, transparent);
+  margin: 0 0 20px 0;
+}
+
+.footer-text {
+  font-size: 14px;
+  color: #718096;
+  font-style: italic;
+  text-align: center;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .article-paper {
+    padding: 30px 20px;
+  }
+
+  .article-paper-title {
+    font-size: 32px;
+  }
+
+  .article-paragraph {
+    font-size: 15px;
+    line-height: 1.8;
+    text-align: left;
+    text-indent: 1.5em;
+  }
+
+  .article-paper-image {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .article-detail-page {
+    padding: 20px 10px;
+  }
+
+  .article-paper {
+    padding: 20px 15px;
+  }
+
+  .article-paper-title {
+    font-size: 24px;
+  }
+
+  .article-paragraph {
+    font-size: 14px;
+    text-indent: 1em;
+  }
+}

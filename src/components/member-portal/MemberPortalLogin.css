@@ -1,0 +1,126 @@
+/* Member Portal Login Styles */
+
+.member-portal-login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  padding: 20px;
+}
+
+.member-portal-login-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 450px;
+  padding: 40px;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.member-portal-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.member-portal-header h1 {
+  color: #48bb78;
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.member-portal-header h2 {
+  color: #2d3748;
+  font-size: 24px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.member-portal-header p {
+  color: #718096;
+  font-size: 14px;
+}
+
+.member-portal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.member-portal-footer {
+  text-align: center;
+  padding-top: 10px;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.signup-section {
+  text-align: center;
+  padding: 15px 0;
+  border-top: 1px solid #e2e8f0;
+  font-size: 14px;
+  color: #718096;
+}
+
+.signup-section p {
+  margin: 0;
+}
+
+.link-button-signup {
+  background: none;
+  border: none;
+  color: #48bb78;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0;
+}
+
+.link-button-signup:hover {
+  color: #38a169;
+  text-decoration: underline;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: #48bb78;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.link-button:hover {
+  color: #38a169;
+}
+
+.home-link-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(72, 187, 120, 0.3);
+}
+
+.home-link-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(72, 187, 120, 0.4);
+}
+
+.home-link-button .home-icon {
+  font-size: 16px;
+}

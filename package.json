@@ -1,0 +1,61 @@
+{
+  "name": "ipc-naigaon-portal",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://ipc-naigaon.github.io/ipc-naigaon-portal",
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.11.2",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.1",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.13.2",
+    "chart.js": "^4.5.1",
+    "date-fns": "^4.1.0",
+    "firebase": "^12.7.0",
+    "html2canvas": "^1.4.1",
+    "jwt-decode": "^4.0.0",
+    "lucide-react": "^0.561.0",
+    "papaparse": "^5.5.3",
+    "react": "^19.2.3",
+    "react-calendar": "^6.0.0",
+    "react-chartjs-2": "^5.3.1",
+    "react-dom": "^19.2.3",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.10.1",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "migrate:firebase": "node src/scripts/migrateToFirebase.js",
+    "switch:firebase": "./switch-to-firebase.sh",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "dotenv": "^17.2.3",
+    "gh-pages": "^6.3.0"
+  }
+}

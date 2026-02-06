@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pacifico&family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Birthday Card Modal */
+.birthday-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.3s ease;
+  padding: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.birthday-modal-content {
+  position: relative;
+  max-width: 400px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.birthday-close-btn {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  background: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s;
+  font-weight: bold;
+  color: #2d3748;
+  z-index: 10001;
+}
+
+.birthday-close-btn:hover {
+  background: #667eea;
+  color: white;
+  transform: rotate(90deg) scale(1.1);
+}
+
+/* Birthday Card */
+.birthday-card {
+  background: linear-gradient(135deg, #FFD700 0%, #FFC700 100%);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(255, 215, 0, 0.5), 0 0 0 1px rgba(255, 199, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  max-width: 400px;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+.birthday-card::before {
+  content: '🎉';
+  position: absolute;
+  font-size: 120px;
+  opacity: 0.15;
+  top: 50%;
+  left: 50%;
+  margin-top: -60px;
+  margin-left: -60px;
+  animation: rotateAndPulse 10s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes rotateAndPulse {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.birthday-card-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.birthday-card-icon {
+  font-size: 64px;
+  margin-bottom: 12px;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.1);
+  }
+}
+
+.birthday-card-header h2 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  font-family: 'Great Vibes', cursive;
+  letter-spacing: 1px;
+}
+
+.birthday-card-body {
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.birthday-card-name {
+  font-size: 36px;
+  font-weight: 800;
+  color: #667eea;
+  text-align: center;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 3px solid #e2e8f0;
+  letter-spacing: 0.5px;
+  font-family: 'Pacifico', cursive;
+}
+
+.birthday-card-message {
+  color: #2d3748;
+  line-height: 1.8;
+  font-family: 'Poppins', sans-serif;
+}
+
+.birthday-card-message p {
+  margin: 0 0 16px 0;
+  font-size: 15px;
+}
+
+.birthday-card-blessing {
+  font-size: 16px;
+  font-weight: 600;
+  color: #48bb78;
+  text-align: center;
+  margin-top: 20px !important;
+}
+
+.birthday-card-footer {
+  text-align: center;
+  margin-top: 28px;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  padding-top: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.birthday-card-footer p {
+  margin: 4px 0;
+  color: #1a202c;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.birthday-card-footer .birthday-card-church-name {
+  font-weight: 800 !important;
+  color: #1a202c !important;
+  font-size: 16px !important;
+  margin-top: 8px !important;
+}
+
+.birthday-card-actions {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+  width: 100%;
+  gap: 12px;
+}
+
+.birthday-download-image-btn,
+.birthday-share-image-btn {
+  width: 100%;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: white;
+}
+
+.birthday-download-image-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.birthday-download-image-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.birthday-share-image-btn {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+}
+
+.birthday-share-image-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+.birthday-download-image-btn:active,
+.birthday-share-image-btn:active {
+  transform: translateY(0);
+}
+
+.birthday-download-image-btn span,
+.birthday-share-image-btn span {
+  font-size: 20px;
+}
+
+.birthday-btn-text-desktop {
+  display: inline;
+}
+
+.whatsapp-icon {
+  font-size: 24px;
+  animation: shake 1s ease-in-out infinite;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .birthday-card {
+    padding: 40px;
+  }
+  
+  .birthday-card-body {
+    padding: 28px;
+  }
+  
+  .birthday-card-header h2 {
+    font-size: 32px;
+  }
+  
+  .birthday-card-icon {
+    font-size: 64px;
+  }
+}
+
+@media (max-width: 600px) {
+  .birthday-modal-content {
+    width: 95%;
+  }
+  
+  .birthday-card {
+    padding: 24px 20px;
+  }
+  
+  .birthday-card-header h2 {
+    font-size: 36px;
+  }
+  
+  .birthday-card-name {
+    font-size: 30px;
+  }
+  
+  .birthday-card-message p {
+    font-size: 14px;
+  }
+  
+  .birthday-share-image-btn {
+    padding: 14px;
+    font-size: 15px;
+  }
+  
+  .birthday-btn-text-desktop {
+    display: none;
+  }
+  
+  .birthday-btn-text-mobile {
+    display: inline;
+  }
+}

@@ -1,0 +1,674 @@
+/* Celebrations Modal Overlay */
+.celebrations-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  animation: overlayFadeIn 0.3s ease-out;
+}
+
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Celebrations Page Styles */
+
+.celebrations-page {
+  position: relative;
+  width: 95vw;
+  height: 95vh;
+  max-width: 1600px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 25px 100px rgba(0, 0, 0, 0.5);
+  animation: modalSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Close Button */
+.celebrations-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.celebrations-close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.celebrations-close-btn:active {
+  transform: rotate(90deg) scale(0.95);
+}
+
+/* Animated background effect */
+.celebrations-page::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+  animation: backgroundShift 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes backgroundShift {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+/* Header Section */
+.celebrations-header {
+  position: relative;
+  padding: 60px 40px 40px;
+  text-align: center;
+  z-index: 1;
+}
+
+.celebrations-title-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.celebrations-title {
+  font-size: 48px;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 12px 0;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  letter-spacing: -0.5px;
+}
+
+.celebrations-subtitle {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 0 8px 0;
+  font-weight: 500;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.celebrations-week-range {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.15);
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Toggle Next Week Button */
+.toggle-next-week-btn {
+  position: absolute;
+  top: 24px;
+  right: 80px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: none;
+}
+
+.toggle-next-week-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.toggle-next-week-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Content Section */
+.celebrations-content {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px 40px;
+  z-index: 1;
+  overflow-y: auto;
+  max-height: calc(95vh - 200px);
+}
+
+.celebrations-content::-webkit-scrollbar {
+  width: 10px;
+}
+
+.celebrations-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.celebrations-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.celebrations-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Category Sections */
+.celebration-category {
+  margin-bottom: 48px;
+  animation: slideInUp 0.6s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.category-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 24px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.category-icon {
+  font-size: 32px;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+}
+
+/* Week Subtitle */
+.week-subtitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 16px 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  padding-left: 8px;
+  border-left: 4px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Celebrations Grid */
+.celebrations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* Celebration Cards */
+.celebration-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+  animation: cardPopIn 0.6s ease-out backwards;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.celebrations-grid .celebration-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.celebrations-grid .celebration-card:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.celebrations-grid .celebration-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.celebrations-grid .celebration-card:nth-child(4) {
+  animation-delay: 0.25s;
+}
+
+.celebrations-grid .celebration-card:nth-child(5) {
+  animation-delay: 0.3s;
+}
+
+.celebrations-grid .celebration-card:nth-child(6) {
+  animation-delay: 0.35s;
+}
+
+@keyframes cardPopIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Card hover effect */
+.celebration-card:hover {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Birthday Card Styles */
+.celebration-card.birthday {
+  background: linear-gradient(135deg, rgba(72, 187, 120, 0.95) 0%, rgba(56, 161, 105, 0.95) 100%);
+  color: white;
+}
+
+/* Anniversary Card Styles */
+.celebration-card.anniversary {
+  background: linear-gradient(135deg, rgba(237, 137, 54, 0.95) 0%, rgba(221, 107, 32, 0.95) 100%);
+  color: white;
+}
+
+/* Church Joining Anniversary Card Styles */
+.celebration-card.churchJoinAnniversary {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%);
+  color: white;
+}
+
+/* Celebration Display */
+.celebration-display {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.celebration-icon {
+  font-size: 64px;
+  position: absolute;
+  z-index: 2;
+  backface-visibility: hidden;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+}
+
+/* Animation for anniversary cards */
+.celebration-card.anniversary .celebration-icon,
+.celebration-card.churchJoinAnniversary .celebration-icon {
+  animation: iconFlip 5s ease-in-out infinite;
+}
+
+.anniversary-badge {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: badgeFlip 5s ease-in-out infinite;
+  backface-visibility: hidden;
+}
+
+.years-number {
+  font-size: 48px;
+  font-weight: 800;
+  color: white;
+  line-height: 1;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.years-text {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+@keyframes iconFlip {
+  0% {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+  40% {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+  50% {
+    opacity: 0;
+    transform: rotateY(90deg);
+  }
+  60% {
+    opacity: 0;
+    transform: rotateY(90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+}
+
+@keyframes badgeFlip {
+  0% {
+    opacity: 0;
+    transform: rotateY(-90deg);
+  }
+  40% {
+    opacity: 0;
+    transform: rotateY(-90deg);
+  }
+  50% {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+  60% {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: rotateY(-90deg);
+  }
+}
+
+/* Celebration Info */
+.celebration-info {
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.celebration-info h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.celebration-type {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.celebration-date {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+/* Celebration Wish */
+.celebration-wish {
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+  background: rgba(0, 0, 0, 0.15);
+  padding: 10px 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* WhatsApp Button for Celebrations */
+.celebration-whatsapp-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: rgba(37, 211, 102, 0.15);
+  color: #25d366;
+  border: 1px solid rgba(37, 211, 102, 0.3);
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
+
+.celebration-whatsapp-btn:hover {
+  background: rgba(37, 211, 102, 0.25);
+  border-color: rgba(37, 211, 102, 0.5);
+  transform: scale(1.1);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* No Celebrations State */
+.no-celebrations {
+  text-align: center;
+  padding: 80px 40px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.no-celebrations-icon {
+  font-size: 80px;
+  margin-bottom: 20px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.no-celebrations h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0 0 12px 0;
+}
+
+.no-celebrations p {
+  font-size: 18px;
+  color: #718096;
+  margin: 0;
+}
+
+/* Loading State */
+.celebrations-page.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 95vw;
+  height: 95vh;
+  max-width: 1600px;
+}
+
+.loading-spinner {
+  font-size: 24px;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .celebrations-header {
+    padding: 40px 20px 30px;
+  }
+
+  .celebrations-title {
+    font-size: 36px;
+  }
+
+  .celebrations-subtitle {
+    font-size: 16px;
+  }
+
+  .celebrations-week-range {
+    font-size: 14px;
+    padding: 6px 16px;
+  }
+
+  .toggle-next-week-btn {
+    position: static;
+    margin-top: 16px;
+    width: 100%;
+    max-width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .celebrations-content {
+    padding: 0 20px 40px;
+  }
+
+  .celebrations-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+  }
+
+  .category-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .celebration-card {
+    padding: 24px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .celebrations-title {
+    font-size: 28px;
+  }
+
+  .toggle-next-week-btn {
+    max-width: 100%;
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .celebrations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-title {
+    font-size: 20px;
+  }
+}
