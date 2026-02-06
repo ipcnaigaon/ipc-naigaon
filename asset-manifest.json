@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/ipc-naigaon/static/css/main.66091364.css",
-    "main.js": "/ipc-naigaon/static/js/main.574a6a4a.js",
+    "main.css": "/ipc-naigaon/static/css/main.44059525.css",
+    "main.js": "/ipc-naigaon/static/js/main.b0dfcf6c.js",
     "static/js/453.0a511549.chunk.js": "/ipc-naigaon/static/js/453.0a511549.chunk.js",
     "static/media/church-group.jpg": "/ipc-naigaon/static/media/church-group.8e64cbdb472cf750880a.jpg",
     "static/media/ipc-logo.png": "/ipc-naigaon/static/media/ipc-logo.dd207045bc7936f666a0.png",
     "static/media/pr-family.jpg": "/ipc-naigaon/static/media/pr-family.a48ad98d4883ae92216b.jpg",
     "index.html": "/ipc-naigaon/index.html",
-    "main.66091364.css.map": "/ipc-naigaon/static/css/main.66091364.css.map",
-    "main.574a6a4a.js.map": "/ipc-naigaon/static/js/main.574a6a4a.js.map",
+    "main.44059525.css.map": "/ipc-naigaon/static/css/main.44059525.css.map",
+    "main.b0dfcf6c.js.map": "/ipc-naigaon/static/js/main.b0dfcf6c.js.map",
     "453.0a511549.chunk.js.map": "/ipc-naigaon/static/js/453.0a511549.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.66091364.css",
-    "static/js/main.574a6a4a.js"
+    "static/css/main.44059525.css",
+    "static/js/main.b0dfcf6c.js"
   ]
 }
