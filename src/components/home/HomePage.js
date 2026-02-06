@@ -112,7 +112,7 @@ const HomePage = () => {
     return () => observer.disconnect();
   }, [testimonials]); // Added testimonials dependency so observer updates when testimonials load
 
-  // Load weekly events (Sunday to Saturday of current week) from Firebase
+  // Load weekly events (Sunday to Sunday - current week to next Sunday) from Firebase
   useEffect(() => {
     let mounted = true;
     const loadWeekly = async () => {
@@ -120,21 +120,21 @@ const HomePage = () => {
         const allEvents = await getAllEvents();
         const now = new Date();
         
-        // Calculate Sunday of the current week
+        // Calculate Sunday of the current week (start)
         const day = now.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
-        const sunday = new Date(now);
-        sunday.setDate(now.getDate() - day);
-        sunday.setHours(0, 0, 0, 0);
+        const startSunday = new Date(now);
+        startSunday.setDate(now.getDate() - day);
+        startSunday.setHours(0, 0, 0, 0);
         
-        // Calculate Saturday of the current week
-        const saturday = new Date(sunday);
-        saturday.setDate(sunday.getDate() + 6);
-        saturday.setHours(23, 59, 59, 999);
+        // Calculate next Sunday (end)
+        const endSunday = new Date(startSunday);
+        endSunday.setDate(startSunday.getDate() + 7);
+        endSunday.setHours(23, 59, 59, 999);
 
         const weekEvents = allEvents
           .filter(e => {
             const d = new Date(e.date);
-            return d >= sunday && d <= saturday;
+            return d >= startSunday && d <= endSunday;
           })
           .sort((a, b) => new Date(a.date) - new Date(b.date));
 
@@ -360,7 +360,7 @@ const HomePage = () => {
                 <h4>Br. Reji Abraham</h4>
                 <p className="leadership-role">Secretary</p>
                 <div className="leadership-contact">
-                  <a href="tel:+919107208316998" className="leadership-phone">📞 +91 7208316998</a>
+                  <a href="tel:+917208316998" className="leadership-phone">📞 +91 7208316998</a>
                   <a href="https://wa.me/917208316998" target="_blank" rel="noopener noreferrer" className="leadership-whatsapp">
                     💬 WhatsApp
                   </a>
